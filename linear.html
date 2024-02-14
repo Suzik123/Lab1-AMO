@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linear</title>
+    <link rel="stylesheet" href="./style-others.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Charis+SIL:wght@700&family=Podkova&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="nav">
+      <a href="./index.html" class="links">Головна сторінка</a>
+      <a href="./branched.html" class="links r">Розгалужений</a>
+      <a href="./cyclical.html" class="links">Циклічний</a>
+    </div>
+    <hr />
+    <div class="container-1">
+      <img src="./linear.png" alt="" id="pic1" />
+      <h1>Внесіть дані для отримання результату</h1>
+      <div class="inputs">
+        <div class="data">
+          <p>Значення a:</p>
+          <input type="number" placeholder="0" class="inputera" />
+        </div>
+        <div class="data">
+          <p>Значення b:</p>
+          <input type="number" placeholder="0" class="inputerb" />
+        </div>
+      </div>
+      <div class="file-check">
+        <h2>Або</h2>
+        <input type="file" name="" id="fileInput" hidden />
+        <label for="fileInput">Вибери файл</label>
+      </div>
+      <div class="btn-result">
+        <button class="btn">Результат</button>
+        <button class="clear">Очистити</button>
+      </div>
+      <div class="container-result">
+        <h1 class="result">Результат</h1>
+      </div>
+    </div>
+  </body>
+  <script src="./script-linear.js"></script>
+</html>
