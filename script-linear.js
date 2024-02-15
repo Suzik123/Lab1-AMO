@@ -1,3 +1,5 @@
+"use strict";
+
 const btn = document.querySelector(".btn");
 const txtresult = document.querySelector(".result");
 const inputera = document.querySelector(".inputera");
