@@ -1,5 +1,3 @@
-"use strict";
-
 const btn = document.querySelector(".btn");
 const txtresult = document.querySelector(".result");
 const inputern = document.querySelector(".inputern");
@@ -37,37 +35,51 @@ fileInput.addEventListener("change", (e) => {
 
 btn.addEventListener("click", () => {
   const n = Number(inputern.value);
+  if (n < 0) {
+    alert("n не може бути від'ємним числом");
+    inputern.value = "";
+    inputerMin.value = "";
+    inputerMax.value = "";
+    txtresult.textContent = "Результат";
+  }
   const min = Number(inputerMin.value);
   const max = Number(inputerMax.value);
-  const m = [...Array(n)];
-  const c = [...Array(n)];
-  const p = [...Array(n)];
-  if (min > max) {
-    txtresult.textContent =
-      "Мінімальне число не може бути більше максимального";
-  } else if (min == 0 && max == 0) {
-    txtresult.textContent = "Неправильно введені дані";
-  } else {
-    for (let i = 0; i < n; i++) {
-      m[i] = randNum(min, max);
-      c[i] = randNum(min, max);
-      p[i] = randNum(min, max);
-    }
-    let numerator = 0;
-    let denominator = 0;
-    for (let i = 0; i < n; i++) {
-      numerator += m[i] + c[i];
-      denominator += p[i] + c[i];
-    }
-    console.log(numerator, denominator);
-    if (denominator === 0) {
-      txtresult.textContent = "Нижня сума дорівнювати нулю";
-    }
-    if (numerator < 0 || denominator < 0) {
-      txtresult.textContent = "Значення під коренем виходить від'ємним";
+  if (Number.isInteger(n) && Number.isInteger(min) && Number.isInteger) {
+    const m = [...Array(n)];
+    const c = [...Array(n)];
+    const p = [...Array(n)];
+    if (min > max) {
+      txtresult.textContent =
+        "Мінімальне число не може бути більше максимального";
+    } else if (min == 0 && max == 0) {
+      txtresult.textContent = "Неправильно введені дані";
     } else {
-      rez = Math.sqrt(numerator / denominator);
-      txtresult.textContent = `Остаточний результат ${rez.toFixed(2)}`;
+      for (let i = 0; i < n; i++) {
+        m[i] = randNum(min, max);
+        c[i] = randNum(min, max);
+        p[i] = randNum(min, max);
+      }
+      let numerator = 0;
+      let denominator = 0;
+      for (let i = 0; i < n; i++) {
+        numerator += m[i] + c[i];
+        denominator += p[i] + c[i];
+      }
+      if (denominator === 0) {
+        txtresult.textContent = "Нижня сума дорівнювати нулю";
+      }
+      if (numerator < 0 || denominator < 0) {
+        txtresult.textContent = "Значення під коренем виходить від'ємним";
+      } else {
+        rez = Math.sqrt(numerator / denominator);
+        txtresult.textContent = `Остаточний результат ${rez.toFixed(6)}`;
+      }
     }
+  } else {
+    alert("Введіть цілі числа");
+    inputern.value = "";
+    inputerMin.value = "";
+    inputerMax.value = "";
+    txtresult.textContent = "Результат";
   }
 });

@@ -1,5 +1,3 @@
-"use strict";
-
 const btn = document.querySelector(".btn");
 const txtresult = document.querySelector(".result");
 const inputera = document.querySelector(".inputera");
@@ -34,5 +32,5 @@ btn.addEventListener("click", () => {
   const a = Number(inputera.value);
   const b = Number(inputerb.value);
   const rez = Math.sin(a + b) - Math.pow(Math.cos(a - b), 2);
-  txtresult.textContent = `Остаточний результат ${rez.toFixed(2)}`;
+  txtresult.textContent = `Остаточний результат ${rez.toFixed(6)}`;
 });

@@ -1,5 +1,3 @@
-"use strict";
-
 const btn = document.querySelector(".btn");
 const txtresult = document.querySelector(".result");
 const inputeri = document.querySelector(".inputeri");
@@ -50,6 +48,7 @@ btn.addEventListener("click", () => {
   let numerator = 0;
   let denominator = 0;
   let rez;
+
   if (i % 5 < 3) {
     numerator = Math.pow(g, g + i);
     denominator = n * Math.pow(b, k + i);
@@ -67,5 +66,9 @@ btn.addEventListener("click", () => {
       rez = Math.pow(numerator / denominator, 1 / 4);
     }
   }
-  txtresult.textContent = `Остаточний результат ${rez.toFixed(2)}`;
+  if (isNaN(rez) || rez === Infinity || rez === -Infinity) {
+    txtresult.textContent = "Число виходить занадто великим 😇";
+  } else {
+    txtresult.textContent = `Остаточний результат ${rez.toFixed(6)}`;
+  }
 });
